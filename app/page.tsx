@@ -55,16 +55,16 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
+    <div className="flex flex-col min-h-screen bg-black text-white overflow-hidden">
       {/* Animated background pattern */}
-      <div className="absolute inset-0 z-0 overflow-hidden opacity-40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#3498db,#9b59b6,#e74c3c)]"></div>
-        <div className="absolute inset-0 bg-[url('/noise.png')] mix-blend-overlay"></div>
+      <div className="fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#3498db,#9b59b6,#e74c3c)] opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('/noise.png')] mix-blend-overlay opacity-40"></div>
       </div>
 
-      <main className="relative z-10 flex flex-col items-center justify-center flex-grow px-6 py-16 gap-12">
+      <main className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-6 py-12 md:py-16">
         {/* Logo */}
-        <div className="w-36 h-36 md:w-48 md:h-48 relative">
+        <div className="w-36 h-36 md:w-48 md:h-48 relative mb-10">
           <Image
             src="https://divizend.com/divizend.svg"
             alt="Divizend Logo"
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
 
         {/* Main title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-center leading-tight tracking-tight">
+        <h1 className="text-4xl md:text-6xl font-bold text-center leading-tight tracking-tight mb-10">
           The{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-purple-500 to-pink-500">
             _art_________
@@ -84,7 +84,7 @@ export default function Home() {
         </h1>
 
         {/* Dates */}
-        <div className="flex flex-col items-center space-y-1 text-sm md:text-base font-medium opacity-80">
+        <div className="flex flex-col items-center space-y-1 text-sm md:text-base font-medium opacity-80 mb-10">
           <p>1. April 2025, 19:00 MEZ</p>
           <p className="text-xs md:text-sm opacity-70">
             1st of April, 2025, 7pm CET
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
 
         {/* Subscription form */}
-        <div className="w-full max-w-md mt-6">
+        <div className="w-full max-w-md">
           <form onSubmit={handleSubmit} className="flex flex-col">
             <Input
               type="email"
@@ -124,7 +124,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 py-6 px-4 mt-auto">
+      <footer className="relative z-10 py-4 px-4 w-full mt-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-white/50">
           <span>🄯 2025 Divizend GmbH</span>
           <div className="flex items-center gap-6">
