@@ -46,7 +46,7 @@ export default function Home() {
       } else {
         throw new Error(data.message || "Something went wrong");
       }
-    } catch (error) {
+    } catch (_) {
       toast.error("Fehler beim Senden deiner E-Mail-Adresse.");
     } finally {
       setIsSubmitting(false);
