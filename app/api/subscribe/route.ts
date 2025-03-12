@@ -20,7 +20,6 @@ export async function POST(request: Request) {
     const waitlistKey = "waitlist:emails";
 
     // Check if email already exists in the set
-    console.log(await redisClient.sMembers(waitlistKey));
     const emailExists = await redisClient.sIsMember(waitlistKey, email);
     if (emailExists) {
       return NextResponse.json(

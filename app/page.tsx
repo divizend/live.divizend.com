@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 // import { Turnstile } from "@marsidev/react-turnstile";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,41 @@ export default function Home() {
   const [email, setEmail] = useState("");
   //const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  // Check if user has previously submitted on mount
+  useEffect(() => {
+    const userSubmitted = localStorage.getItem("hasSubmitted") === "true";
+    setHasSubmitted(userSubmitted);
+  }, []);
+
+  // Fetch subscriber count on mount and periodically
+  useEffect(() => {
+    const fetchSubscriberCount = async () => {
+      try {
+        const response = await fetch("/api/subscribe/count");
+        if (response.ok) {
+          const data = await response.json();
+          setSubscriberCount(data.count);
+        }
+      } catch (error) {
+        console.error("Error fetching subscriber count:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    // Fetch immediately
+    fetchSubscriberCount();
+
+    // Set up polling every 10 seconds
+    const intervalId = setInterval(fetchSubscriberCount, 10000);
+
+    // Clean up on unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,6 +79,15 @@ export default function Home() {
         toast.success("Du wurdest zur Warteliste hinzugefügt.");
         setEmail("");
         // setToken(null);
+
+        // Mark user as having submitted
+        setHasSubmitted(true);
+        localStorage.setItem("hasSubmitted", "true");
+
+        // Immediately increment subscriber count for instant feedback
+        if (subscriberCount !== null) {
+          setSubscriberCount(subscriberCount + 1);
+        }
       } else {
         throw new Error(data.message || "Something went wrong");
       }
@@ -51,12 +95,33 @@ export default function Home() {
       console.error(error);
       if (error.message === ErrorMessage.EMAIL_ALREADY_REGISTERED) {
         toast.error("Du bist bereits in der Warteliste.");
+        // If email already registered, still mark as submitted
+        setHasSubmitted(true);
+        localStorage.setItem("hasSubmitted", "true");
       } else {
         toast.error("Fehler beim Senden deiner E-Mail-Adresse.");
       }
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Generate subscriber count text
+  const getSubscriberText = () => {
+    if (isLoading || subscriberCount === null) {
+      return "Lädt..."; // Loading placeholder
+    }
+
+    const count = subscriberCount > 0 ? subscriberCount : 0;
+    const displayCount = hasSubmitted ? count - 1 : count;
+
+    if (displayCount <= 0) {
+      return hasSubmitted ? "Du bist der/die Erste!" : "Sei der/die Erste!";
+    }
+
+    return hasSubmitted
+      ? `Du + ${displayCount} andere`
+      : `${displayCount} andere`;
   };
 
   return (
@@ -124,6 +189,15 @@ export default function Home() {
             >
               {isSubmitting ? "Wird gesendet..." : "RSVP"}
             </Button>
+
+            {/* Subtle subscriber count text - always shown, with loading state */}
+            <p
+              className={`text-xs text-center mt-2 ${
+                isLoading ? "text-white/30" : "text-white/50"
+              }`}
+            >
+              {getSubscriberText()}
+            </p>
           </form>
         </div>
       </main>
