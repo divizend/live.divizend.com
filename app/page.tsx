@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { toast } from "sonner";
+import { ErrorMessage } from "./types";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -46,9 +47,13 @@ export default function Home() {
       } else {
         throw new Error(data.message || "Something went wrong");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      toast.error("Fehler beim Senden deiner E-Mail-Adresse.");
+      if (error.message === ErrorMessage.EMAIL_ALREADY_REGISTERED) {
+        toast.error("Du bist bereits in der Warteliste.");
+      } else {
+        toast.error("Fehler beim Senden deiner E-Mail-Adresse.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -85,9 +90,9 @@ export default function Home() {
 
         {/* Dates */}
         <div className="flex flex-col items-center space-y-1 text-sm md:text-base font-medium opacity-80 mb-10">
-          <p>1. April 2025, 19:00 MEZ</p>
+          <p>1. April 2025, 19:00 MEZ, genau hier</p>
           <p className="text-xs md:text-sm opacity-70">
-            1st of April, 2025, 7pm CET
+            1st of April, 2025, 7pm CET, right here
           </p>
         </div>
 
@@ -117,7 +122,7 @@ export default function Home() {
               disabled={isSubmitting}
               className="w-full h-12 bg-gradient-to-r from-emerald-500 to-purple-600 hover:from-emerald-600 hover:to-purple-700 text-white font-medium transition-all"
             >
-              {isSubmitting ? "Wird gesendet..." : "Informiert bleiben"}
+              {isSubmitting ? "Wird gesendet..." : "RSVP"}
             </Button>
           </form>
         </div>

@@ -1,91 +1,77 @@
-import { MongoClient } from "mongodb";
 import { NextResponse } from "next/server";
-
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/divizend";
-/*const CLOUDFLARE_TURNSTILE_SECRET_KEY =
-  process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;*/
-
-let client: MongoClient;
-
-async function connectToDatabase() {
-  if (!client) {
-    client = new MongoClient(MONGODB_URI);
-    await client.connect();
-  }
-  return client;
-}
-
-async function verifyTurnstileToken(token: string) {
-  /*const formData = new FormData();
-  formData.append(
-    "secret",
-    CLOUDFLARE_TURNSTILE_SECRET_KEY || "dummy_secret_key"
-  );
-  formData.append("response", token);
-
-  const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-  const result = await fetch(url, {
-    method: "POST",
-    body: formData,
-  });
-
-  const outcome = await result.json();
-  return outcome.success;*/
-  console.log(token);
-  return true;
-}
+import { connectToRedis, getAllSubscribedEmails } from "@/app/lib/redis";
+import { ErrorMessage, SuccessMessage } from "@/app/types";
 
 export async function POST(request: Request) {
   try {
-    const { email, token } = await request.json();
+    const { email } = await request.json();
 
     if (!email) {
       return NextResponse.json(
-        { message: "Email is required" },
+        { message: ErrorMessage.EMAIL_REQUIRED },
         { status: 400 }
       );
     }
 
-    /*if (!token) {
-      return NextResponse.json(
-        { message: "Captcha verification token is required" },
-        { status: 400 }
-      );
-    }*/
+    // Connect to Redis
+    const redisClient = await connectToRedis();
 
-    const isTokenValid = await verifyTurnstileToken(token);
-    if (!isTokenValid) {
-      return NextResponse.json(
-        { message: "Captcha verification failed" },
-        { status: 400 }
-      );
-    }
+    // Use a set to store unique emails
+    const waitlistKey = "waitlist:emails";
 
-    // Connect to MongoDB and save the email
-    const client = await connectToDatabase();
-    const db = client.db();
-
-    // Check if email already exists
-    const existingEmail = await db.collection("waitlist").findOne({ email });
-    if (existingEmail) {
+    // Check if email already exists in the set
+    console.log(await redisClient.sMembers(waitlistKey));
+    const emailExists = await redisClient.sIsMember(waitlistKey, email);
+    if (emailExists) {
       return NextResponse.json(
-        { message: "Email already registered" },
+        { message: ErrorMessage.EMAIL_ALREADY_REGISTERED },
         { status: 409 }
       );
     }
 
-    // Insert new email with timestamp
-    await db.collection("waitlist").insertOne({
+    // Add email to the set
+    await redisClient.sAdd(waitlistKey, email);
+
+    // Store additional metadata in a hash
+    await redisClient.hSet(`waitlist:meta:${email}`, {
       email,
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({
+      success: true,
+      message: SuccessMessage.SUBSCRIPTION_SUCCESSFUL,
+    });
   } catch (error) {
     console.error("Error in subscribe endpoint:", error);
     return NextResponse.json(
-      { message: "Internal server error" },
+      { message: ErrorMessage.INTERNAL_SERVER_ERROR },
+      { status: 500 }
+    );
+  }
+}
+
+export async function GET(request: Request) {
+  try {
+    const authHeader = request.headers.get("Authorization");
+
+    // Check if the authorization header matches the expected value
+    if (authHeader !== "Bearer " + process.env.API_KEY) {
+      return NextResponse.json(
+        { message: ErrorMessage.UNAUTHORIZED },
+        { status: 401 }
+      );
+    }
+
+    // Get all emails
+    const emails = await getAllSubscribedEmails();
+
+    // Return emails as JSON array
+    return NextResponse.json(emails);
+  } catch (error) {
+    console.error("Error in list emails endpoint:", error);
+    return NextResponse.json(
+      { message: ErrorMessage.INTERNAL_SERVER_ERROR },
       { status: 500 }
     );
   }
