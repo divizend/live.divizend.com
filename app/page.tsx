@@ -208,7 +208,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 py-4 px-4 w-full mt-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-white/50">
-          <span>🄯 2025 Divizend GmbH</span>
+          <span className="mx-2">🄯 2025 Divizend GmbH</span>
           <div className="flex items-center gap-6">
             <a
               href="https://github.com/divizend/live.divizend.com"
@@ -226,6 +226,14 @@ export default function Home() {
               className="hover:text-white/80 transition-colors"
             >
               Impressum
+            </a>
+            <a
+              href="https://divizend.com/data-protection"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/80 transition-colors"
+            >
+              Datenschutz
             </a>
           </div>
         </div>
