@@ -10,16 +10,16 @@ import { toast } from "sonner";
 
 export default function Home() {
   const [email, setEmail] = useState("");
-  const [token, setToken] = useState<string | null>(null);
+  //const [token, setToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!token) {
+    /*if (!token) {
       toast.error("Bitte vervollständige die Captcha-Überprüfung.");
       return;
-    }
+    }*/
 
     if (!email) {
       toast.error("Bitte gib deine E-Mail-Adresse ein.");
@@ -34,7 +34,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, token }),
+        body: JSON.stringify({ email }), //, token
       });
 
       const data = await response.json();
@@ -42,7 +42,7 @@ export default function Home() {
       if (response.ok) {
         toast.success("Du wurdest zur Warteliste hinzugefügt.");
         setEmail("");
-        setToken(null);
+        // setToken(null);
       } else {
         throw new Error(data.message || "Something went wrong");
       }
@@ -102,7 +102,7 @@ export default function Home() {
               className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/50 mb-4"
             />
 
-            <div className="flex justify-center mb-2">
+            {/*<div className="flex justify-center mb-2">
               <Turnstile
                 siteKey={
                   process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY ||
@@ -110,7 +110,7 @@ export default function Home() {
                 }
                 onSuccess={setToken}
               />
-            </div>
+            </div>*/}
 
             <Button
               type="submit"

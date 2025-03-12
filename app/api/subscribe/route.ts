@@ -17,7 +17,7 @@ async function connectToDatabase() {
 }
 
 async function verifyTurnstileToken(token: string) {
-  const formData = new FormData();
+  /*const formData = new FormData();
   formData.append(
     "secret",
     CLOUDFLARE_TURNSTILE_SECRET_KEY || "dummy_secret_key"
@@ -31,7 +31,8 @@ async function verifyTurnstileToken(token: string) {
   });
 
   const outcome = await result.json();
-  return outcome.success;
+  return outcome.success;*/
+  return true;
 }
 
 export async function POST(request: Request) {
@@ -45,12 +46,12 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!token) {
+    /*if (!token) {
       return NextResponse.json(
         { message: "Captcha verification token is required" },
         { status: 400 }
       );
-    }
+    }*/
 
     const isTokenValid = await verifyTurnstileToken(token);
     if (!isTokenValid) {
