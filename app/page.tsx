@@ -80,7 +80,7 @@ export default function Home() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-purple-500 to-pink-500">
             _art_________
           </span>{" "}
-          startup.
+          FinTech.
         </h1>
 
         {/* Dates */}
