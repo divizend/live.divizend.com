@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost:27017/divizend";
-const CLOUDFLARE_TURNSTILE_SECRET_KEY =
-  process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+/*const CLOUDFLARE_TURNSTILE_SECRET_KEY =
+  process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;*/
 
 let client: MongoClient;
 
@@ -32,6 +32,7 @@ async function verifyTurnstileToken(token: string) {
 
   const outcome = await result.json();
   return outcome.success;*/
+  console.log(token);
   return true;
 }
 
