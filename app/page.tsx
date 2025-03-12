@@ -91,9 +91,12 @@ export default function Home() {
       } else {
         throw new Error(data.message || "Something went wrong");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error(error);
-      if (error.message === ErrorMessage.EMAIL_ALREADY_REGISTERED) {
+      if (
+        error instanceof Error &&
+        error.message === ErrorMessage.EMAIL_ALREADY_REGISTERED
+      ) {
         toast.error("Du bist bereits in der Warteliste.");
         // If email already registered, still mark as submitted
         setHasSubmitted(true);
