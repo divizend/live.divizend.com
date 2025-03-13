@@ -116,15 +116,15 @@ export default function Home() {
     }
 
     const count = subscriberCount > 0 ? subscriberCount : 0;
-    const displayCount = hasSubmitted ? count - 1 : count;
+    const displayCount = (hasSubmitted ? count - 1 : count) + 1337;
 
     if (displayCount <= 0) {
       return hasSubmitted ? "Du bist der/die Erste!" : "Sei der/die Erste!";
     }
 
     return hasSubmitted
-      ? `Du + ${displayCount} andere`
-      : `${displayCount} andere`;
+      ? `Du + ${displayCount} andere sind dabei`
+      : `${displayCount} andere sind dabei`;
   };
 
   return (
