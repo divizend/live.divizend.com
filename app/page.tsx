@@ -123,8 +123,8 @@ export default function Home() {
     }
 
     return hasSubmitted
-      ? `Du + ${displayCount} andere sind dabei`
-      : `${displayCount} andere sind dabei`;
+      ? `Du + ${displayCount} andere sind dabei / You + ${displayCount} others are joining`
+      : `${displayCount} andere sind dabei / ${displayCount} others are joining`;
   };
 
   return (
@@ -137,7 +137,7 @@ export default function Home() {
 
       <main className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-6 py-12 md:py-16">
         {/* Logo */}
-        <div className="w-36 h-36 md:w-48 md:h-48 relative mb-10">
+        <div className="w-36 h-36 md:w-48 md:h-48 relative mb-4">
           <Image
             src="https://divizend.com/divizend.svg"
             alt="Divizend Logo"
@@ -148,13 +148,21 @@ export default function Home() {
         </div>
 
         {/* Main title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-center leading-tight tracking-tight mb-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-center leading-tight tracking-tight mb-4">
           The{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-purple-500 to-pink-500">
             _art_________
           </span>{" "}
           FinTech.
         </h1>
+
+        {/* Subtitle */}
+        <p className="text-sm md:text-base text-center font-light text-white/60 mb-10">
+          Die Revolution für den modernen Marktteilnehmer.{" "}
+          <span className="text-white/40 text-xs md:text-sm">
+            / The revolution for the modern market participant.
+          </span>
+        </p>
 
         {/* Dates */}
         <div className="flex flex-col items-center space-y-1 text-sm md:text-base font-medium opacity-80 mb-10">
