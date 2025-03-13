@@ -116,7 +116,7 @@ export default function Home() {
     }
 
     const count = subscriberCount > 0 ? subscriberCount : 0;
-    const displayCount = (hasSubmitted ? count - 1 : count) + 1337;
+    const displayCount = hasSubmitted ? count - 1 : count;
 
     if (displayCount <= 0) {
       return hasSubmitted ? "Du bist der/die Erste!" : "Sei der/die Erste!";
