@@ -216,7 +216,32 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 py-4 px-4 w-full mt-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-white/50">
-          <span className="mx-2">🄯 2025 Divizend GmbH</span>
+          <span className="mx-2 flex items-center">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block mr-1"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="8"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                fill="none"
+              />
+              <path
+                d="M9.5 8.5 A4.5 4.5 0 1 1 9.5 15.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+            2025 Divizend GmbH
+          </span>
           <div className="flex items-center gap-6">
             <a
               href="https://github.com/divizend/live.divizend.com"
