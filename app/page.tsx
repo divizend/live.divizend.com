@@ -165,9 +165,11 @@ export default function Home() {
         </p>
 
         {/* Dates */}
-        <div className="flex flex-col items-center space-y-1 text-sm md:text-base font-medium opacity-80 mb-10">
-          <p>1. April 2025, 19:00 MEZ, genau hier</p>
-          <p className="text-xs md:text-sm opacity-70">
+        <div className="flex flex-col items-center space-y-1 text-sm md:text-base mb-10">
+          <p className="text-center font-light text-white/60">
+            1. April 2025, 19:00 MEZ, genau hier
+          </p>
+          <p className="text-white/40 text-xs md:text-sm">
             1st of April, 2025, 7pm CET, right here
           </p>
         </div>
