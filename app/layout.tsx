@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title:
-    "The _art_________ FinTech | 1st of April 2025, 7pm CET | live.divizend.com",
-  description: "The _art_________ FinTech",
+    "The _art_________ FinTech | 1. April 2025, 19 Uhr MEZ | live.divizend.com",
+  description:
+    "Eine neue Einheit von Divizend geht an den Start – und es könnte alles verändern, was du über FinTechs weißt. Sei live dabei.",
 };
 
 export default function RootLayout({
