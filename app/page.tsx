@@ -158,9 +158,9 @@ export default function Home() {
 
         {/* Subtitle */}
         <p className="text-sm md:text-base text-center font-light text-white/60 mb-10">
-          Die Revolution für den modernen Marktteilnehmer.{" "}
+          Eine neue Generation von FinTech.{" "}
           <span className="text-white/40 text-xs md:text-sm">
-            / The revolution for the modern market participant.
+            / A new generation of FinTech.
           </span>
         </p>
 
