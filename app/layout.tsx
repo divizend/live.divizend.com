@@ -15,10 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "The _art_________ FinTech | 1. April 2025, 19 Uhr MEZ | live.divizend.com",
+  title: "Participatory Wealth, Live in Action. | live.divizend.com",
   description:
-    "Eine neue Einheit von Divizend geht an den Start – und es könnte alles verändern, was du über FinTechs weißt. Sei live dabei.",
+    "Our mission is to increase global financial health, both digitally and socially. We invite you to join our community fostering financial flourishing, financial independence and more intelligent financial decision-making structures.",
 };
 
 export default function RootLayout({

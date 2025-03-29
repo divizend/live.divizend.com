@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ["developer.apple.com", "play.google.com"],
+  },
 };
 
 export default nextConfig;
