@@ -35,7 +35,7 @@ export default function Home() {
             </div>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link
-                href="https://live.divizend.com/stream"
+                href="/stream"
                 className="transition-colors hover:text-primary cursor-pointer"
               >
                 Twitch
@@ -93,7 +93,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="flex flex-col items-center justify-center gap-2">
                     <Link
-                      href="https://twitch.tv/divizend"
+                      href="/stream"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto"
@@ -122,7 +122,7 @@ export default function Home() {
                       </Button>
                     </Link>
                     <Link
-                      href="https://docs.google.com/presentation/d/1h6CmdySjttuiQN9nzBaSkbWCvegpO8tbclm_8Ot-bu4/edit"
+                      href="/strategy-deck"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto"
@@ -165,7 +165,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col sm:flex-row gap-6 mt-8 justify-center items-center">
                 <Link
-                  href="https://apps.apple.com/de/app/divizend-companion/id6670220715"
+                  href="/ios"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center"
@@ -179,7 +179,7 @@ export default function Home() {
                   />
                 </Link>
                 <Link
-                  href="https://play.google.com/store/apps/details?id=com.divizend.companion"
+                  href="/android"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center"
@@ -217,7 +217,7 @@ export default function Home() {
 
               <div className="mt-4 flex justify-center mb-4">
                 <Link
-                  href="https://calendar.google.com/calendar/u/0?cid=Y19jZDYwYWYzNmVhZGE3ZmUyYjVkOWY2OThjNTZmYzliMzAwYTZiZmQwOTgzYzQzZDQ3ZmNlNjZlY2EyNDliMDc0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+                  href="/calendar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto"
@@ -317,7 +317,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2">
                   <Link
-                    href="https://pol.is/8knthjekds"
+                    href="/polis"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -329,7 +329,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://dreaming.now/divizend"
+                    href="/dreams"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -362,7 +362,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2">
                   <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfiNXkzQBOsRNp4q9vvtwSczwgHkK3rSA6KfgqdBRhcbwttgA/viewform?usp=header"
+                    href="/dev-proposal"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -374,7 +374,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link
-                    href="https://github.com/divizend/companion"
+                    href="/github"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -408,7 +408,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScTievr8TyWnFY1PIu8XhyZhtw77m4r5qIAO5fbwx3FMDtgFA/viewform?usp=dialog"
+                    href="/bc-proposal"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -605,13 +605,13 @@ export default function Home() {
               <span>GitHub</span>
             </Link>
             <Link
-              href="https://divizend.com/impressum"
+              href="https://divizend.com/imprint"
               className="hover:underline"
             >
               Imprint
             </Link>
             <Link
-              href="https://divizend.com/datenschutz"
+              href="https://divizend.com/data-protection"
               className="hover:underline"
             >
               Data Protection
