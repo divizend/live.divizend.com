@@ -19,7 +19,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container px-4 md:px-6 flex h-16 items-center justify-center mx-auto">
           <div className="flex items-center justify-between w-full max-w-7xl px-0">
-            <div>
+            <div className="hidden md:block">
               <Link href="/" className="flex items-center">
                 <Image
                   src="https://divizend.com/divizend.svg"
@@ -34,6 +34,12 @@ export default function Home() {
               </Link>
             </div>
             <nav className="flex items-center space-x-6 text-sm font-medium">
+              <Link
+                href="/stream"
+                className="transition-colors hover:text-primary cursor-pointer"
+              >
+                Twitch
+              </Link>
               <Link
                 href="#companion"
                 className="transition-colors hover:text-primary cursor-pointer"
