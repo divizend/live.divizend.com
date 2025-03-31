@@ -74,8 +74,8 @@ export function PolisDialog() {
               variant="outline"
               className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800"
             >
-              Abseits von Depotanalyse und Finanzbildung, was für weitere Ideen
-              hast du für Divizend Live?
+              Abseits von Depotanalyse und Finanzbildung, was wünschst du dir
+              noch für Divizend Live?
             </Button>
           </Link>
         </div>
