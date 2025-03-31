@@ -122,7 +122,7 @@ export default function Home() {
                       </Button>
                     </Link>
                     <Link
-                      href="/strategy-deck"
+                      href="/whitepaper"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto"
@@ -132,7 +132,7 @@ export default function Home() {
                         className="border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-900/30 w-full cursor-pointer"
                       >
                         <span className="flex justify-center w-full">
-                          Explore the Strategy Deck
+                          Read the White Paper (English/German)
                         </span>
                       </Button>
                     </Link>
