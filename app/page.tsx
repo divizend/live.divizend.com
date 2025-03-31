@@ -79,6 +79,23 @@ export default function Home() {
                   fostering financial flourishing, financial independence and
                   more intelligent financial decision-making structures.
                 </p>
+                <div className="flex justify-center mt-4">
+                  <Link
+                    href="/whitepaper"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-900/30 w-full cursor-pointer"
+                    >
+                      <span className="flex justify-center w-full">
+                        Read the White Paper (English/German)
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
               </div>
               <div id="live" className="w-full max-w-md space-y-2 mt-8">
                 <Card className="w-full mx-auto bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800">
@@ -92,7 +109,7 @@ export default function Home() {
                       below to see when livestreams take place.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex flex-col items-center justify-center gap-2">
+                  <CardContent className="flex flex-col items-center justify-center">
                     <Link
                       href="/stream"
                       target="_blank"
@@ -119,21 +136,6 @@ export default function Home() {
                             <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
                           </svg>
                           Watch Divizend Live
-                        </span>
-                      </Button>
-                    </Link>
-                    <Link
-                      href="/whitepaper"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full sm:w-auto"
-                    >
-                      <Button
-                        variant="outline"
-                        className="border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-900/30 w-full cursor-pointer"
-                      >
-                        <span className="flex justify-center w-full">
-                          Read the White Paper (English/German)
                         </span>
                       </Button>
                     </Link>
