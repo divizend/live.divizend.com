@@ -88,7 +88,8 @@ export default function Home() {
                     </CardTitle>
                     <CardDescription className="mx-auto max-w-md">
                       Do join our planning meetings, community conversations and
-                      collective learning sessions.
+                      collective learning sessions. Have a look at the calendar
+                      below to see when livestreams take place.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-col items-center justify-center gap-2">
