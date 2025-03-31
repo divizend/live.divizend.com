@@ -35,12 +35,6 @@ export default function Home() {
             </div>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link
-                href="/stream"
-                className="transition-colors hover:text-primary cursor-pointer"
-              >
-                Twitch
-              </Link>
-              <Link
                 href="#companion"
                 className="transition-colors hover:text-primary cursor-pointer"
               >
@@ -286,12 +280,12 @@ export default function Home() {
                   Participation By Default
                 </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Divizend Live is not only of an app and an event hub, but it
-                  also pioneers a radical new approach for a fundamentally
-                  democratic way of making decisions about how to distribute
-                  money. If you have a Divizend membership, you like a
-                  shareholder in Divizend Live. If you participate, you and your
-                  business can grow with us.
+                  Divizend Live is not only an app and an event hub, but it also
+                  pioneers a radical new approach for a fundamentally democratic
+                  way of making decisions about how to distribute money. If you
+                  have a Divizend membership, you like a shareholder in Divizend
+                  Live. If you participate, you and your business can grow with
+                  us.
                 </p>
               </div>
             </div>
