@@ -292,9 +292,9 @@ export default function Home() {
                   Divizend Live is not only an app and an event hub, but it also
                   pioneers a radical new approach for a fundamentally democratic
                   way of making decisions about how to distribute money. If you
-                  have a Divizend membership, you like a shareholder in Divizend
-                  Live. If you participate, you and your business can grow with
-                  us.
+                  have a Divizend membership, you are like a shareholder in
+                  Divizend Live. If you participate, you and your business can
+                  grow with us.
                 </p>
               </div>
             </div>
