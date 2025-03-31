@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function PolisRedirect() {
+export default function PolisDeAnalyzeRedirect() {
   redirect("https://pol.is/8knthjekds");
 }

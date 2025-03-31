@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { PolisDialog } from "@/components/polis-dialog";
 
 export default function Home() {
   return (
@@ -319,18 +320,8 @@ export default function Home() {
                   </p>
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2">
-                  <Link
-                    href="/polis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
-                    <Button className="w-full bg-amber-100 hover:bg-amber-200 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:hover:bg-amber-900/30 dark:text-amber-100 dark:border-amber-800 cursor-pointer">
-                      <span className="flex justify-center w-full">
-                        Participate in Polis Discussions
-                      </span>
-                    </Button>
-                  </Link>
+                  <PolisDialog />
+
                   <Link
                     href="/dreams"
                     target="_blank"
