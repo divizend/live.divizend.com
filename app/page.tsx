@@ -372,6 +372,18 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2">
                   <Link
+                    href="/expertise-proposal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button className="w-full bg-orange-100 hover:bg-orange-200 text-orange-900 border-orange-200 dark:bg-orange-900/20 dark:hover:bg-orange-900/30 dark:text-orange-100 dark:border-orange-800 cursor-pointer">
+                      <span className="flex justify-center w-full">
+                        Propose Expertise
+                      </span>
+                    </Button>
+                  </Link>
+                  <Link
                     href="/dev-proposal"
                     target="_blank"
                     rel="noopener noreferrer"
