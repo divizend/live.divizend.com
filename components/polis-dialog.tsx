@@ -41,7 +41,7 @@ export function PolisDialog() {
           >
             <Button
               variant="outline"
-              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800 cursor-pointer"
             >
               Was für Analysen über dein Depot wünschst du dir im Companion?
             </Button>
@@ -56,7 +56,7 @@ export function PolisDialog() {
           >
             <Button
               variant="outline"
-              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800 cursor-pointer"
             >
               Über welche Finanzthemen würdest du gern interaktiv und ggf.
               KI-gestützt mehr im Companion lernen?
@@ -72,7 +72,7 @@ export function PolisDialog() {
           >
             <Button
               variant="outline"
-              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+              className="w-full h-auto py-2 whitespace-normal text-sm justify-start hover:bg-amber-100 dark:hover:bg-amber-900/30 border-amber-200 dark:border-amber-800 cursor-pointer"
             >
               Abseits von Depotanalyse und Finanzbildung, was wünschst du dir
               noch für Divizend Live?
