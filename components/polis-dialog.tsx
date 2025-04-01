@@ -20,7 +20,7 @@ export function PolisDialog() {
       <DialogTrigger asChild>
         <Button className="w-full bg-amber-100 hover:bg-amber-200 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:hover:bg-amber-900/30 dark:text-amber-100 dark:border-amber-800 cursor-pointer">
           <span className="flex justify-center w-full">
-            Participate in Polis Discussions
+            View Ongoing Polis Discussions
           </span>
         </Button>
       </DialogTrigger>

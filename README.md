@@ -13,6 +13,12 @@ curl "https://live.divizend.com/api/subscribe" -H "Authorization: Bearer <API_KE
 - shadcn
 - hosted on Vercel
 
+## Promote change to production immediately
+
+```
+git push && git checkout production && git merge main && git push && git checkout main
+```
+
 ## License
 
 GPL

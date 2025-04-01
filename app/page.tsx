@@ -136,7 +136,7 @@ export default function Home() {
                           >
                             <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
                           </svg>
-                          Watch Divizend Live
+                          Watch Divizend Live, we start at 7pm
                         </span>
                       </Button>
                     </Link>
@@ -380,7 +380,7 @@ export default function Home() {
                   >
                     <Button className="w-full bg-orange-100 hover:bg-orange-200 text-orange-900 border-orange-200 dark:bg-orange-900/20 dark:hover:bg-orange-900/30 dark:text-orange-100 dark:border-orange-800 cursor-pointer">
                       <span className="flex justify-center w-full">
-                        Propose Expertise
+                        Propose Financial Expertise
                       </span>
                     </Button>
                   </Link>
@@ -392,7 +392,7 @@ export default function Home() {
                   >
                     <Button className="w-full bg-orange-100 hover:bg-orange-200 text-orange-900 border-orange-200 dark:bg-orange-900/20 dark:hover:bg-orange-900/30 dark:text-orange-100 dark:border-orange-800 cursor-pointer">
                       <span className="flex justify-center w-full">
-                        Propose Development Projects
+                        Submit Development Proposal
                       </span>
                     </Button>
                   </Link>
@@ -429,7 +429,7 @@ export default function Home() {
                     facilitators giving you new inspiration for life.
                   </p>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex flex-col space-y-2">
                   <Link
                     href="/bc-proposal"
                     target="_blank"
@@ -439,6 +439,18 @@ export default function Home() {
                     <Button className="w-full bg-rose-100 hover:bg-rose-200 text-rose-900 border-rose-200 dark:bg-rose-900/20 dark:hover:bg-rose-900/30 dark:text-rose-100 dark:border-rose-800 cursor-pointer">
                       <span className="flex justify-center w-full">
                         Propose a Workshop Session
+                      </span>
+                    </Button>
+                  </Link>
+                  <Link
+                    href="/dj-proposal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button className="w-full bg-rose-100 hover:bg-rose-200 text-rose-900 border-rose-200 dark:bg-rose-900/20 dark:hover:bg-rose-900/30 dark:text-rose-100 dark:border-rose-800 cursor-pointer">
+                      <span className="flex justify-center w-full">
+                        Propose a DJ Set or Playlist
                       </span>
                     </Button>
                   </Link>
