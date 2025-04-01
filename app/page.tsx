@@ -367,7 +367,8 @@ export default function Home() {
                 <CardContent className="flex-grow">
                   <p className="text-sm text-muted-foreground mb-4 text-center">
                     Whether you're a developer, designer, or have thoughtful
-                    suggestions, your contributions would be most welcome.
+                    suggestions or knowledge to share, your contributions are
+                    the cornerstones of the Divizend Live community.
                   </p>
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2">
