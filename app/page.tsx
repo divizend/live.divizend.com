@@ -136,7 +136,7 @@ export default function Home() {
                           >
                             <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
                           </svg>
-                          Watch Divizend Live, we start at 7pm
+                          Watch Divizend Live
                         </span>
                       </Button>
                     </Link>
@@ -541,7 +541,23 @@ export default function Home() {
                     className="w-full"
                   >
                     <Button className="w-full bg-rose-100 hover:bg-rose-200 text-rose-900 border-rose-200 dark:bg-rose-900/20 dark:hover:bg-rose-900/30 dark:text-rose-100 dark:border-rose-800 cursor-pointer">
-                      <span className="flex justify-center w-full">GitHub</span>
+                      <span className="flex items-center justify-center w-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="mr-2"
+                        >
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        GitHub
+                      </span>
                     </Button>
                   </Link>
                 </CardFooter>
